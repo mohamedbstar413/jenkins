@@ -1,0 +1,9 @@
+node{
+    git branch: 'main', url: 'https://github.com/mohamedbstar413/jenkins.git'
+    stage('build'){
+        sh 'echo "Build Stage"'
+    }
+    stage('test'){
+        sh 'echo "Test Stage"'
+    }
+}
