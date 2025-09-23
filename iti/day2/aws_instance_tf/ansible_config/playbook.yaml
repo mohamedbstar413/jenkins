@@ -1,0 +1,28 @@
+---
+- name: configure the aws instance jenkins agent
+  hosts: all
+
+  tasks:
+    - name: update cache
+      apt:
+        update_cache: yes
+    - name: install openjdk-17-jdk
+      apt:
+        name: openjdk-17-jdk
+        state: present
+        update_cache: yes
+      become: yes
+
+    - name: install nodejs
+      apt:
+        name: nodejs
+        state: present
+        update_cache: yes
+      become: yes
+
+    - name: install git
+      apt:
+        name: git
+        state: present
+        update_cache: true
+      become: yes
